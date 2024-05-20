@@ -54,7 +54,7 @@ fun main() {
         address = "Topova 1",
         creationDate = Date(),
         numberFaculties = "45",
-        priceRecommended = "300 грн",
+        website = "1",
         militaryDepartment = true
     )
 
@@ -63,20 +63,20 @@ fun main() {
         institution = "Institution 1",
         specialtyCode = "67",
         semester = "1",
-        numberHours = 100,
+        numberHours = "100",
         approvalDate = Date(),
-        examination = true
+        examination = true,
         educational = edu1
     )
 
-    educationalService.create(mag1)
-    educationalService.create(mag2)
-    educationalService.create(mag3)
-    educationalService.create(mag4)
-    educationalService.create(mag5)
-    disciplineService.create(article1)
+    educationalService.create(edu1)
+    educationalService.create(edu2)
+    educationalService.create(edu3)
+    educationalService.create(edu4)
+    educationalService.create(edu5)
+    disciplineService.create(discipline)
 
-    println("Retrieved educational: $mag3")
+    println("Retrieved educational: $edu3")
 
     educationalService.delete(4)
 }

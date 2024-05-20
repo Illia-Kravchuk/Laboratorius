@@ -9,7 +9,7 @@ import ua.kpi.its.lab.data.svc.EducationalService
 import ua.kpi.its.lab.data.svc.DisciplineService
 
 @Service
-class MagazineServiceImpl(private val repo: EducationalRepository) : EducationalService {
+class EducationalServiceImpl(private val repo: EducationalRepository) : EducationalService {
     override fun create(educational: Educational) = repo.save(educational)
     override fun retrieve(id: Long) = repo.findById(id).orElse(null)
     override fun update(educational: Educational) = repo.save(educational)
@@ -17,7 +17,7 @@ class MagazineServiceImpl(private val repo: EducationalRepository) : Educational
 }
 
 @Service
-class ScientificArticleServiceImpl(private val repo: DisciplineRepository) : DisciplineService {
+class DisciplineServiceImpl(private val repo: DisciplineRepository) : DisciplineService {
     override fun create(discipline: Discipline) = repo.save(discipline)
     override fun retrieve(id: Long) = repo.findById(id).orElse(null)
     override fun update(discipline: Discipline) = repo.save(discipline)
