@@ -5,38 +5,39 @@ import java.util.*
 
 
 @Entity
-data class Magazine(
+data class Educational(
      @Id @GeneratedValue(strategy = GenerationType.AUTO)
      val id: Long = 0,
 
      val name: String,
-     val topic: String,
-     val language: String,
-     val establishDate: Date,
-     val issn: String,
-     val priceRecommended: String,
-     val periodicity: Boolean,
+     val accreditatioLevel: String,
+     val address: String,
+     val creationDate: Date,
+     val numberFaculties: String,
+     val website: String,
+     val militaryDepartment: Boolean,
 
- ) : Comparable<Magazine> {
-     override fun compareTo(other: Magazine): Int {
+ ) : Comparable<Educational> {
+     override fun compareTo(other: Educational): Int {
          val nameComparison = name.compareTo(other.name)
          return if (nameComparison != 0) nameComparison else id.compareTo(other.id)
      }
  }
 
  @Entity
- data class ScientificArticle(
+ data class Discipline(
      @Id @GeneratedValue(strategy = GenerationType.AUTO)
      val id: Long = 0,
 
      val name: String,
-     val author: String,
-     val writingDate: Date,
-     val wordCount: String,
-     val numberLinks: Long,
-     val origLang: Boolean,
+     val institution: String,
+     val specialtyCode: String,
+     val semester: String,
+     val numberHours: String,
+     val approvalDate: Date,
+     val examination: Boolean,
 
      @ManyToOne
-     @JoinColumn(name = "magazine_id")
-     val magazine: Magazine?
+     @JoinColumn(name = "educational_id")
+     val educational: Educational?
  )
